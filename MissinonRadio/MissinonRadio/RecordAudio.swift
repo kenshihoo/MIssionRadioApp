@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class RecordAudio: UIViewController {
+class RecordAudio: UIViewController{
     let session = AVAudioSession.sharedInstance()
     
     override func viewDidLoad() {
@@ -20,6 +20,8 @@ class RecordAudio: UIViewController {
                 completion(granted)
             }
         }
+        //録音と再生の両方を可能にする
+        try? session.setCategory(.playAndRecord)
     }
 }
 
