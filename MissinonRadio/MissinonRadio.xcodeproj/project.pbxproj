@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E347E63125DAA2F10048DF10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E347E63025DAA2F10048DF10 /* AppDelegate.swift */; };
 		E347E63325DAA2F10048DF10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E347E63225DAA2F10048DF10 /* SceneDelegate.swift */; };
-		E347E63525DAA2F10048DF10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E347E63425DAA2F10048DF10 /* ViewController.swift */; };
+		E347E63525DAA2F10048DF10 /* RecordAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E347E63425DAA2F10048DF10 /* RecordAudio.swift */; };
 		E347E63825DAA2F10048DF10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E347E63625DAA2F10048DF10 /* Main.storyboard */; };
 		E347E63A25DAA2F30048DF10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E347E63925DAA2F30048DF10 /* Assets.xcassets */; };
 		E347E63D25DAA2F30048DF10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E347E63B25DAA2F30048DF10 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		E347E62D25DAA2F10048DF10 /* MissinonRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissinonRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E347E63025DAA2F10048DF10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E347E63225DAA2F10048DF10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E347E63425DAA2F10048DF10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E347E63425DAA2F10048DF10 /* RecordAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAudio.swift; sourceTree = "<group>"; };
 		E347E63725DAA2F10048DF10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E347E63925DAA2F30048DF10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E347E63C25DAA2F30048DF10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			children = (
 				E347E63025DAA2F10048DF10 /* AppDelegate.swift */,
 				E347E63225DAA2F10048DF10 /* SceneDelegate.swift */,
-				E347E63425DAA2F10048DF10 /* ViewController.swift */,
+				E347E63425DAA2F10048DF10 /* RecordAudio.swift */,
 				E347E63625DAA2F10048DF10 /* Main.storyboard */,
 				E347E63925DAA2F30048DF10 /* Assets.xcassets */,
 				E347E63B25DAA2F30048DF10 /* LaunchScreen.storyboard */,
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E347E63525DAA2F10048DF10 /* ViewController.swift in Sources */,
+				E347E63525DAA2F10048DF10 /* RecordAudio.swift in Sources */,
 				E347E63125DAA2F10048DF10 /* AppDelegate.swift in Sources */,
 				E347E63325DAA2F10048DF10 /* SceneDelegate.swift in Sources */,
 			);
