@@ -8,6 +8,10 @@
 import UIKit
 import AVFoundation
 
+class AudioEditorManager {
+    
+}
+
 class RecordAudio: UIViewController{
     let session = AVAudioSession.sharedInstance()
     
