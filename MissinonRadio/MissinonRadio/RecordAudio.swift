@@ -30,7 +30,7 @@ class RecordAudio: UIViewController,FileManagerDelegate{
                                            in: .userDomainMask,
                                            appropriateFor: nil, create: false)
             let path = docs.appendingPathComponent("ecord.m4a")
-            let audio = "音声データ".data(using: .utf8)!
+            let audio = "音声データにデータ型を変更したい".data(using: .utf8)!
 
             fileManager.createFile(atPath: path.path,
                                    contents: audio, attributes: nil)
@@ -38,5 +38,8 @@ class RecordAudio: UIViewController,FileManagerDelegate{
             print(error)
         }
     }
+    
+    
+    
 }
 
