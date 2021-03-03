@@ -10,6 +10,7 @@ import AVFoundation
 
 class RecordAudio: UIViewController,FileManagerDelegate{
     let session = AVAudioSession.sharedInstance()
+    var recorder: AVAudioRecorder?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,11 @@ class RecordAudio: UIViewController,FileManagerDelegate{
         } catch {
             print(error)
         }
+    }
+    
+    
+    func record(){
+        recorder?.record()
     }
     
     
