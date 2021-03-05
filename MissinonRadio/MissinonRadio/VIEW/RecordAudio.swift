@@ -11,8 +11,9 @@ import AVFoundation
 class RecordAudio: UIViewController,FileManagerDelegate{
     let session = AVAudioSession.sharedInstance()
     var recorder: AVAudioRecorder?
-    let fileManager: FileManager = .default
+    var fileManager = FileSetting()
     var fileName = "record.m4a"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,29 +27,7 @@ class RecordAudio: UIViewController,FileManagerDelegate{
         //録音と再生の両方を可能にする
         try? session.setCategory(.playAndRecord)
         
-        //ファイルの設定
-        func fileUrl(fileName: String) -> URL? {
-            fileManager.urls(
-                for: .documentDirectory,
-                in: .userDomainMask
-            ).first?.appendingPathComponent(fileName)
-            
-        }
-        
-        func setting(){
-            // 音声ファイルを用意する
-            fileUrl(fileName: fileName)
-
-        }
-        
-    }
-    
-    
-    func record(){
-        recorder?.record()
-    }
-    
-    
-    
+        //音声ファイルを用意する
+        FileSetting.fileUrl(name: fileName)
 }
 
