@@ -11,6 +11,8 @@ import AVFoundation
 class RecordAudio: UIViewController,FileManagerDelegate{
     let session = AVAudioSession.sharedInstance()
     var recorder: AVAudioRecorder?
+    let fileManager: FileManager = .default
+    var fileName = "record.m4a"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,19 +27,20 @@ class RecordAudio: UIViewController,FileManagerDelegate{
         try? session.setCategory(.playAndRecord)
         
         //ファイルの設定
-        do {
-            let fileManager = FileManager.default
-            let docs = try fileManager.url(for: .documentDirectory,
-                                           in: .userDomainMask,
-                                           appropriateFor: nil, create: false)
-            let path = docs.appendingPathComponent("ecord.m4a")
-            let audio = "音声データにデータ型を変更したい".data(using: .utf8)!
-
-            fileManager.createFile(atPath: path.path,
-                                   contents: audio, attributes: nil)
-        } catch {
-            print(error)
+        func fileUrl(fileName: String) -> URL? {
+            fileManager.urls(
+                for: .documentDirectory,
+                in: .userDomainMask
+            ).first?.appendingPathComponent(fileName)
+            
         }
+        
+        func setting(){
+            // 音声ファイルを用意する
+            fileUrl(fileName: fileName)
+
+        }
+        
     }
     
     
