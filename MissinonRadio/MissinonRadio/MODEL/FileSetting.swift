@@ -14,22 +14,16 @@ class FileSetting{
     let fileManager: FileManager = .default
     
         
-        //ファイルの設定
-        func fileUrl(name: String) -> URL? {
-            fileManager.urls(
+    //ファイルの設定
+    func fileUrl(name: String) -> URL? {
+        fileManager.urls(
                 for: .documentDirectory,
                 in: .userDomainMask
             ).first?.appendingPathComponent(name)
-            
-        }
+    }
         
-        
-    
     func record(){
         recorder?.record()
     }
-    
-    
-    
 }
 

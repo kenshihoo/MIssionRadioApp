@@ -11,7 +11,7 @@ import AVFoundation
 class RecordAudio: UIViewController,FileManagerDelegate{
     let session = AVAudioSession.sharedInstance()
     var recorder: AVAudioRecorder?
-    var fileManager = FileSetting()
+    var fileSetting = FileSetting()
     var fileName = "record.m4a"
     
     
@@ -28,6 +28,6 @@ class RecordAudio: UIViewController,FileManagerDelegate{
         try? session.setCategory(.playAndRecord)
         
         //音声ファイルを用意する
-        FileSetting.fileUrl(name: fileName)
+        fileSetting.fileUrl(name:fileName)
+    }
 }
-
