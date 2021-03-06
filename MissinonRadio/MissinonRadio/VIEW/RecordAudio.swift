@@ -9,25 +9,28 @@ import UIKit
 import AVFoundation
 
 class RecordAudio: UIViewController,FileManagerDelegate{
-    let session = AVAudioSession.sharedInstance()
-    var recorder: AVAudioRecorder?
-    var fileSetting = FileSetting()
+    let fileSetting = FileSetting()
+    let recordSetting = RecordSetting()
     var fileName = "record.m4a"
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //sessionの準備
+        recordSetting.preset()
         //マイクの許可を実装
-        func requestPermission(completion: @escaping (Bool) -> Void) {
-            session.requestRecordPermission { granted in
-                completion(granted)
-            }
-        }
-        //録音と再生の両方を可能にする
-        try? session.setCategory(.playAndRecord)
-        
+        recordSetting.requestPermission{ granted in
+            guard granted else { return }}
         //音声ファイルを用意する
-        fileSetting.fileUrl(name:fileName)
+        let fileUrl = fileSetting.fileSet(name:fileName)
+    }
+    
+
+    @IBAction func recoedButton(_ sender: Any) {
+        recordSetting.recorder?.record()
+    }
+    
+    @IBAction func stopButton(_ sender: Any) {
+        recordSetting.recorder?.stop()
     }
 }
