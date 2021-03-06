@@ -12,18 +12,11 @@ class RecordSetting{
     let session = AVAudioSession.sharedInstance()
     var recorder: AVAudioRecorder!
     
-
     func preset(){
         //録音と再生の両方を可能にする
         try? session.setCategory(.playAndRecord)
         //sessionをアクティブにする
         try? session.setActive(true)
-    }
-    
-    func recordSetup(url: URL){
-        recorder = try! AVAudioRecorder(url: url, settings: formatSettig)
-        // レコーダーに収録準備させる
-        recorder?.prepareToRecord()
     }
     
     func requestPermission(completion: @escaping (Bool) -> Void) {
@@ -33,6 +26,13 @@ class RecordSetting{
         }
     }
     
+    func recordSetup(url: URL){
+        recorder = try! AVAudioRecorder(url: url, settings: formatSettig)
+        // 録音を準備する
+        recorder?.prepareToRecord()
+    }
+    
+   
     //録音フォーマットの設定
     let formatSettig: [String: Any] = [
         // MPEG-4 AACコーデックを指定するキー

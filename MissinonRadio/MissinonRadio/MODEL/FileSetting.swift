@@ -10,13 +10,10 @@ import Foundation
 class FileSetting{
     let fileManager: FileManager = .default
     
-    //ファイルの設定
+    //ファイルの作成
     func fileSet(name: String) -> URL? {
-        fileManager.urls(
-                for: .documentDirectory,
-                in: .userDomainMask
-            ).first?.appendingPathComponent(name)
-        
+        fileManager.urls(for: .documentDirectory,in: .userDomainMask)
+            .first?.appendingPathComponent(name)
     }
 }
 
