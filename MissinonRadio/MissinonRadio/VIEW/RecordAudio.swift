@@ -15,14 +15,15 @@ class RecordAudio: UIViewController,FileManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //sessionの準備
+       
         recordSetting.preset()
         //マイクの許可を実装
         recordSetting.requestPermission{ granted in
             guard granted else { return }}
         //音声ファイルを用意する
-        let fileUrl = fileSetting.fileSet(name:fileName)
+        let fileUrl = fileSetting.fileSet(name:fileName)!
+        //sessionの準備
+        recordSetting.recordSetup(url: fileUrl)
     }
     
 
