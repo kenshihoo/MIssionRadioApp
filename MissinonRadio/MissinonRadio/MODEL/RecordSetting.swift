@@ -22,7 +22,8 @@ class RecordSetting{
     
     func recordSetup(url: URL){
         recorder = try! AVAudioRecorder(url: url, settings: formatSettig)
-        recorder?.prepareToRecord() // レコーダーに収録準備させる
+        // レコーダーに収録準備させる
+        recorder?.prepareToRecord()
     }
     
     func requestPermission(completion: @escaping (Bool) -> Void) {

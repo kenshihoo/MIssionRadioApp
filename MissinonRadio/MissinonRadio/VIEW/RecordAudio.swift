@@ -12,6 +12,7 @@ class RecordAudio: UIViewController,FileManagerDelegate{
     let fileSetting = FileSetting()
     let recordSetting = RecordSetting()
     var fileName = "record.m4a"
+    @IBOutlet weak var startOrPause: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +29,18 @@ class RecordAudio: UIViewController,FileManagerDelegate{
     
 
     @IBAction func recoedButton(_ sender: Any) {
-        recordSetting.recorder?.record()
+        if recordSetting.recorder.isRecording{
+            recordSetting.recorder?.record()
+            startOrPause.text = "録音中"
+        }
+            else{
+                recordSetting.recorder?.pause()
+                startOrPause.text = "録音停止中"
+            }
     }
     
     @IBAction func stopButton(_ sender: Any) {
         recordSetting.recorder?.stop()
+        startOrPause.text = "録音"
     }
 }
