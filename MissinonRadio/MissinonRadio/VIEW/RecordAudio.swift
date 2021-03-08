@@ -12,7 +12,7 @@ class RecordAudio: UIViewController,FileManagerDelegate{
     let recordSetting = RecordSetting()
     var fileName = "record.m4a"
     @IBOutlet weak var statusLabel: UILabel!
-    
+    @IBOutlet var playButton: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
        
