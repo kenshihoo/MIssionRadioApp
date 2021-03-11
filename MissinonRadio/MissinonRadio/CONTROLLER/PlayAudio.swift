@@ -7,8 +7,13 @@
 
 import UIKit
 
-class PlayAudio: UITableViewController {
-
+class PlayAudio: UITableViewController{
+    
+    @IBOutlet weak var audioNameLabel: UILabel!
+    @IBOutlet weak var audioTimeLabel: UILabel!
+    @IBOutlet weak var recordModeButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
