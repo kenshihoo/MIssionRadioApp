@@ -96,7 +96,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="zc1-GJ-Abz">
-                                <rect key="frame" x="40" y="422" width="294" height="56"/>
+                                <rect key="frame" x="40" y="344" width="294" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="収録画面へ"/>
                             </button>
@@ -105,6 +105,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="audioList" destination="wPk-4v-P5f" id="W81-Vi-hVa"/>
                         <outlet property="audioNameLabel" destination="P93-gs-iJy" id="1l6-tw-yQm"/>
                         <outlet property="audioTimeLabel" destination="daN-6L-mPo" id="h8m-QJ-cyK"/>
                         <outlet property="recordModeButton" destination="zc1-GJ-Abz" id="8nT-KG-Qmz"/>
@@ -112,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7e-OI-ABM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="6"/>
+            <point key="canvasLocation" x="521" y="6"/>
         </scene>
     </scenes>
     <resources>
