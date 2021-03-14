@@ -7,15 +7,20 @@
 
 import UIKit
 
-class PlayAudio:  UIViewController{
+class PlayAudio:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     @IBOutlet weak var audioList: UITableView!
-    @IBOutlet weak var audioNameLabel: UILabel!
-    @IBOutlet weak var audioTimeLabel: UILabel!
     @IBOutlet weak var recordModeButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
 }
