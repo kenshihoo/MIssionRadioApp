@@ -11,7 +11,6 @@ class PlayAudio:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     @IBOutlet weak var audioList: UITableView!
     
-    @IBOutlet weak var recordModeButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         audioList.dataSource = self
@@ -25,4 +24,10 @@ class PlayAudio:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         <#code#>
     }
+    
+    //録音Buttonから録音画面を表示させる
+    @IBAction func goRecordButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToRecord", sender: nil)
+    }
+    
 }
