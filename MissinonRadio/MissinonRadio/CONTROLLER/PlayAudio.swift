@@ -10,6 +10,7 @@ import UIKit
 class PlayAudio:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     @IBOutlet weak var audioList: UITableView!
+    var audios: [URL] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,7 @@ class PlayAudio:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return audios.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
