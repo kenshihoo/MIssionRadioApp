@@ -43,5 +43,9 @@ class RecordAudio: UIViewController,FileManagerDelegate{
     @IBAction func stopButton(_ sender: Any) {
         recordSetting.recorder?.stop()
         statusLabel.text = "録音"
+        
+        //リスト画面に戻る
+        dismiss(animated: true, completion: nil)
+        
     }
 }

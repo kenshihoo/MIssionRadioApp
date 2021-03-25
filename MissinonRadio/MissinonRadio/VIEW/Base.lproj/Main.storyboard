@@ -102,6 +102,7 @@
                     </view>
                     <connections>
                         <outlet property="audioList" destination="wPk-4v-P5f" id="IVe-fI-2wb"/>
+                        <outlet property="gotoRecord" destination="zc1-GJ-Abz" id="9SB-5x-tyr"/>
                         <outlet property="recordModeButton" destination="zc1-GJ-Abz" id="8nT-KG-Qmz"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToRecord" id="Ud7-eL-cku"/>
                     </connections>
