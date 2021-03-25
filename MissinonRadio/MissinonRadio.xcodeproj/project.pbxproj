@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E33885D4260CC2B000FE2E49 /* AudioListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33885D3260CC2B000FE2E49 /* AudioListCell.swift */; };
 		E347E63125DAA2F10048DF10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E347E63025DAA2F10048DF10 /* AppDelegate.swift */; };
 		E347E63325DAA2F10048DF10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E347E63225DAA2F10048DF10 /* SceneDelegate.swift */; };
 		E347E63525DAA2F10048DF10 /* RecordAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E347E63425DAA2F10048DF10 /* RecordAudio.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E33885D3260CC2B000FE2E49 /* AudioListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListCell.swift; sourceTree = "<group>"; };
 		E347E62D25DAA2F10048DF10 /* MissinonRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissinonRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E347E63025DAA2F10048DF10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E347E63225DAA2F10048DF10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				E347E63425DAA2F10048DF10 /* RecordAudio.swift */,
 				E3B6E45925F7ABBF00DF87BA /* PlayAudio.swift */,
+				E33885D3260CC2B000FE2E49 /* AudioListCell.swift */,
 			);
 			path = CONTROLLER;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				E347E63525DAA2F10048DF10 /* RecordAudio.swift in Sources */,
 				E347E63125DAA2F10048DF10 /* AppDelegate.swift in Sources */,
 				E347E63325DAA2F10048DF10 /* SceneDelegate.swift in Sources */,
+				E33885D4260CC2B000FE2E49 /* AudioListCell.swift in Sources */,
 				E3B6E44825F3691B00DF87BA /* RecordSetting.swift in Sources */,
 				E3B6E45A25F7ABBF00DF87BA /* PlayAudio.swift in Sources */,
 				E35C02D025F2796800C0C9A2 /* FileSetting.swift in Sources */,

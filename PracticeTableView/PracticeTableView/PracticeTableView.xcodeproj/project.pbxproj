@@ -76,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				E3B6E4962600FB7D00DF87BA /* ViewController.swift */,
-				E3B6E4A82603893400DF87BA /* Animal.swift */,
 				E3B6E4AB26039C3C00DF87BA /* AnimalTableViewCell.swift */,
 			);
 			path = CONTROLLER;
@@ -93,6 +92,7 @@
 		E3B6E4B126039CC100DF87BA /* MODEL */ = {
 			isa = PBXGroup;
 			children = (
+				E3B6E4A82603893400DF87BA /* Animal.swift */,
 			);
 			path = MODEL;
 			sourceTree = "<group>";

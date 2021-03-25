@@ -79,7 +79,7 @@
                                     <constraint firstAttribute="width" secondItem="i3a-c8-4yO" secondAttribute="height" multiplier="106:85" id="leh-3k-c4M"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="W2K-ou-lSh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="W2K-ou-lSh" customClass="AudioListCell" customModule="MissinonRadio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="319" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W2K-ou-lSh" id="NoZ-bG-dZG">
@@ -97,6 +97,9 @@
                                                 <constraint firstItem="HOr-Ob-gcG" firstAttribute="leading" secondItem="NoZ-bG-dZG" secondAttribute="leadingMargin" constant="8" id="1KS-pi-hHM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="audioNameLabel" destination="HOr-Ob-gcG" id="pN0-Tl-RBf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
