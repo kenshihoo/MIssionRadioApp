@@ -54,7 +54,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="6"/>
+            <point key="canvasLocation" x="726" y="6"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nD6-ir-gAZ">
+            <objects>
+                <viewController id="qpY-6u-7dh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7AU-Jl-W11">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Slo-ie-1aU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lAy-5f-L57"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cd2-Tl-a7m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="753" y="735"/>
         </scene>
         <!--Play Audio-->
         <scene sceneID="TLR-62-YoA">
@@ -99,6 +115,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="audioNameLabel" destination="HOr-Ob-gcG" id="pN0-Tl-RBf"/>
+                                            <segue destination="qpY-6u-7dh" kind="show" identifier="goToplay" id="fYh-57-B2E"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
