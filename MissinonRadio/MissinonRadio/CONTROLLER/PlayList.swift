@@ -7,8 +7,9 @@
 
 import UIKit
 
-class PlayAudio:  UIViewController,UITableViewDelegate,UITableViewDataSource{
+class Playlist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     
+
     @IBOutlet weak var audioList: UITableView!
     var audios: [URL] = []
     
@@ -23,7 +24,11 @@ class PlayAudio:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalTableViewCell", for: indexPath) as? AudioListCell else {
+            fatalError("Dequeue failed: AnimalTableViewCell.")
+            
+        }
+        return cell
     }
     
     //録音Buttonから録音画面を表示させる

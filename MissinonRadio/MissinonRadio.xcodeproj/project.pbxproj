@@ -17,7 +17,7 @@
 		E35C02D025F2796800C0C9A2 /* FileSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C02CF25F2796800C0C9A2 /* FileSetting.swift */; };
 		E3B6E44825F3691B00DF87BA /* RecordSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6E44725F3691B00DF87BA /* RecordSetting.swift */; };
 		E3B6E45225F3E73D00DF87BA /* PlaySetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6E45125F3E73D00DF87BA /* PlaySetting.swift */; };
-		E3B6E45A25F7ABBF00DF87BA /* PlayAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6E45925F7ABBF00DF87BA /* PlayAudio.swift */; };
+		E3B6E45A25F7ABBF00DF87BA /* PlayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6E45925F7ABBF00DF87BA /* PlayList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		E35C02CF25F2796800C0C9A2 /* FileSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSetting.swift; sourceTree = "<group>"; };
 		E3B6E44725F3691B00DF87BA /* RecordSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSetting.swift; sourceTree = "<group>"; };
 		E3B6E45125F3E73D00DF87BA /* PlaySetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySetting.swift; sourceTree = "<group>"; };
-		E3B6E45925F7ABBF00DF87BA /* PlayAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAudio.swift; sourceTree = "<group>"; };
+		E3B6E45925F7ABBF00DF87BA /* PlayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				E347E63425DAA2F10048DF10 /* RecordAudio.swift */,
-				E3B6E45925F7ABBF00DF87BA /* PlayAudio.swift */,
+				E3B6E45925F7ABBF00DF87BA /* PlayList.swift */,
 				E33885D3260CC2B000FE2E49 /* AudioListCell.swift */,
 			);
 			path = CONTROLLER;
@@ -182,7 +182,7 @@
 				E347E63325DAA2F10048DF10 /* SceneDelegate.swift in Sources */,
 				E33885D4260CC2B000FE2E49 /* AudioListCell.swift in Sources */,
 				E3B6E44825F3691B00DF87BA /* RecordSetting.swift in Sources */,
-				E3B6E45A25F7ABBF00DF87BA /* PlayAudio.swift in Sources */,
+				E3B6E45A25F7ABBF00DF87BA /* PlayList.swift in Sources */,
 				E35C02D025F2796800C0C9A2 /* FileSetting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
