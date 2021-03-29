@@ -19,10 +19,12 @@ class Playlist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
         audioList.delegate = self
     }
     
+    // TableViewに表示するセルの数を返す
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return audios.count
     }
     
+    // 各セルを生成する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalTableViewCell", for: indexPath) as? AudioListCell else {
             fatalError("Dequeue failed: AnimalTableViewCell.")
