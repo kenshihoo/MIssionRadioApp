@@ -24,13 +24,18 @@ class Playlist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
         return audios.count
     }
     
-    // 各セルを生成する
+    // セルを生成する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalTableViewCell", for: indexPath) as? AudioListCell else {
-            fatalError("Dequeue failed: AnimalTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AudioListCell", for: indexPath) as? AudioListCell else {
+            fatalError("Dequeue failed: AAudioListCell.")
             
         }
         return cell
+    }
+    
+//セルがタップされたときの動き
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
     }
     
     //録音Buttonから録音画面を表示させる
