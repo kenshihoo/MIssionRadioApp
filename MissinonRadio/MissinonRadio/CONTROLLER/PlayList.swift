@@ -11,7 +11,7 @@ class Playlist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     
 
     @IBOutlet weak var audioList: UITableView!
-    var audios: [URL] = []
+    var audios = RecordAudio.fileUrl
     
     override func viewDidLoad() {
         super.viewDidLoad()
