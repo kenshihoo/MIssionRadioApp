@@ -30,7 +30,7 @@ class Playlist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
             fatalError("Dequeue failed: AAudioListCell.")
             
         }
-        cell.audioNameLabel.text = " "
+        cell.audioNameLabel.text = ""
         return cell
     }
     
