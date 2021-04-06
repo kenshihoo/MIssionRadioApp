@@ -16,6 +16,8 @@ class Playlist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
         super.viewDidLoad()
         audioList.dataSource = self
         audioList.delegate = self
+//        audioList.register(Playlist.self, forCellReuseIdentifier: NSStringFromClass(Playlist.self))
+//               self.view.addSubview(audioList)
     }
     
     //セクションの数を指定(今回は1つ)
@@ -31,7 +33,7 @@ class Playlist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     // セルを生成する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AudioListCell", for: indexPath) as? AudioListCell else {
-            fatalError("Dequeue failed: AAudioListCell.")
+            fatalError("Dequeue failed: AudioListCell.")
             
         }
         cell.audioNameLabel.text = ""
