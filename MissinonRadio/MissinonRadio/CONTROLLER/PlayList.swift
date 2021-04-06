@@ -36,7 +36,7 @@ class Playlist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
             fatalError("Dequeue failed: AudioListCell.")
             
         }
-        cell.audioNameLabel.text = ""
+        cell.audioNameLabel.text = "record.m4a"
         return cell
     }
     
