@@ -11,7 +11,6 @@ class Playlist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     
 
     @IBOutlet weak var audioList: UITableView!
-    var audios = RecordAudio.fileUrl
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +18,14 @@ class Playlist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
         audioList.delegate = self
     }
     
-    // TableViewに表示するセルの数を返す
+    //セクションの数を指定(今回は1つ)
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    // TableViewに表示するセルの数を返す(本来はファイル数に合わせて出したい)
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return audios.count
+        return 1
     }
     
     // セルを生成する
@@ -36,7 +40,7 @@ class Playlist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     
 //セルがタップされたときの動き
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        print("タップされたよ")
     }
     
     //録音Buttonから録音画面を表示させる
