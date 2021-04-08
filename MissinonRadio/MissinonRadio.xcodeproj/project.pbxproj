@@ -83,9 +83,9 @@
 		E35C02D325F2797700C0C9A2 /* CONTROLLER */ = {
 			isa = PBXGroup;
 			children = (
-				E347E63425DAA2F10048DF10 /* RecordAudio.swift */,
 				E3B6E45925F7ABBF00DF87BA /* Audiolist.swift */,
 				E33885D3260CC2B000FE2E49 /* AudioListCell.swift */,
+				E347E63425DAA2F10048DF10 /* RecordAudio.swift */,
 				E355B31E261F5F2F00C27768 /* PlayAudio.swift */,
 			);
 			path = CONTROLLER;
