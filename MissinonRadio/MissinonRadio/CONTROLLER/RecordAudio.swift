@@ -14,6 +14,7 @@ class RecordAudio: UIViewController,FileManagerDelegate{
     
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet var playButton: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        

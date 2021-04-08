@@ -12,6 +12,12 @@ class RecordSetting{
     let session = AVAudioSession.sharedInstance()
     var recorder: AVAudioRecorder!
     
+    func requestPermission(completion: @escaping (Bool) -> Void) {
+        //マイクの許可を実装
+        session.requestRecordPermission{
+            granted in completion(granted)}
+    }
+    
     func preset(){
         //録音と再生の両方を可能にする
         try? session.setCategory(.playAndRecord)
@@ -19,12 +25,6 @@ class RecordSetting{
         try? session.setActive(true)
     }
     
-    func requestPermission(completion: @escaping (Bool) -> Void) {
-        //マイクの許可を実装
-        session.requestRecordPermission { granted in
-            completion(granted)
-        }
-    }
     
     func recordSetup(url: URL){
         recorder = try! AVAudioRecorder(url: url, settings: formatSettig)
