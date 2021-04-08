@@ -31,7 +31,7 @@ class RecordAudio: UIViewController,FileManagerDelegate{
     
 
     @IBAction func recoedButton(_ sender: Any) {
-        if recordSetting.recorder.isRecording{
+        if recordSetting.recorder.isRecording == false {
             recordSetting.recorder?.record()
             statusLabel.text = "録音中"
         }
