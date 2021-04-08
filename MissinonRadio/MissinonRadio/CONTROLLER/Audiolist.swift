@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Playlist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
+class Audiolist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     
 
     @IBOutlet weak var audioList: UITableView!
