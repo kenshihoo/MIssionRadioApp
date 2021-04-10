@@ -56,13 +56,22 @@
             </objects>
             <point key="canvasLocation" x="726" y="6"/>
         </scene>
-        <!--View Controller-->
+        <!--Play Audio-->
         <scene sceneID="nD6-ir-gAZ">
             <objects>
-                <viewController id="qpY-6u-7dh" sceneMemberID="viewController">
+                <viewController id="qpY-6u-7dh" customClass="PlayAudio" customModule="MissinonRadio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7AU-Jl-W11">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="再生画面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OA0-nB-duq">
+                                <rect key="frame" x="134" y="152" width="167" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Slo-ie-1aU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -70,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cd2-Tl-a7m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="753" y="735"/>
+            <point key="canvasLocation" x="752.79999999999995" y="734.48275862068976"/>
         </scene>
         <!--Audiolist-->
         <scene sceneID="TLR-62-YoA">

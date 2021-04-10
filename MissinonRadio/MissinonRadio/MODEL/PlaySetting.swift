@@ -11,6 +11,8 @@ import AVFoundation
 class PlaySetting{
     var audioEngine = AVAudioEngine()
     var audioPlayerNode = AVAudioPlayerNode()
+    var audioPlayer: AVAudioPlayer?
+    var isPlaying: Bool { audioPlayer?.isPlaying ?? false }
     
     func playAudio(url: URL){
         do {
@@ -24,11 +26,7 @@ class PlaySetting{
                 print(error)
             }
         }
-}
-
-class AudioPlayer {
-    var audioPlayer: AVAudioPlayer?
-    var isPlaying: Bool { audioPlayer?.isPlaying ?? false }
+   
     func setupPlayer(with url: URL) { // プレイヤーを作成
         audioPlayer = try! AVAudioPlayer(contentsOf: url)
         audioPlayer?.prepareToPlay()

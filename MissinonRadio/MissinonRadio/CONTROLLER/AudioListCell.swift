@@ -11,7 +11,6 @@ class AudioListCell: UITableViewCell {
     
     @IBOutlet weak var audioNameLabel: UILabel!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,7 +21,4 @@ class AudioListCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    
-
 }
