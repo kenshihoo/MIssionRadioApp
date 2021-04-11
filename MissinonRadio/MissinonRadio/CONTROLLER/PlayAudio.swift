@@ -10,11 +10,19 @@ import AVFoundation
 
 class PlayAudio: UIViewController {
 
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet var playButton: UIView!
+    @IBOutlet weak var currentTimeLabel: UILabel!
+    
+    var fileUrl :String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
 
     }
+    
     
 
     /*
