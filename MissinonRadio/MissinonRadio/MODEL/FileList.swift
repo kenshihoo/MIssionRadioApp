@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 class FileList{
     
     var fileNames :[String] = []
