@@ -50,7 +50,6 @@
                     <connections>
                         <outlet property="playButton" destination="8bC-Xf-vdC" id="VO0-mP-Orn"/>
                         <outlet property="statusLabel" destination="tRn-29-iE4" id="HUs-Zv-3vi"/>
-                        <segue destination="KSH-3x-J3u" kind="show" identifier="backToList" id="KvV-46-B7a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -111,7 +110,7 @@
             <objects>
                 <viewController id="KSH-3x-J3u" customClass="Audiolist" customModule="MissinonRadio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rAb-GF-UgA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="zc1-GJ-Abz">
@@ -130,14 +129,14 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AudioListCell" id="W2K-ou-lSh" customClass="AudioListCell" customModule="MissinonRadio" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="319" height="43"/>
+                                        <rect key="frame" x="0.0" y="28" width="319" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W2K-ou-lSh" id="NoZ-bG-dZG">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ファイル名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOr-Ob-gcG">
-                                                    <rect key="frame" x="24" y="11" width="87" height="21"/>
+                                                    <rect key="frame" x="24" y="11" width="87" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

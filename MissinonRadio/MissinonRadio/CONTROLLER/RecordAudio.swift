@@ -10,7 +10,7 @@ import UIKit
 class RecordAudio: UIViewController,FileManagerDelegate{
     let fileSetting = FileSetting()
     let recordSetting = RecordSetting()
-    var fileName :String!
+    let fileName = "record.m4a"
     
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet var playButton: UIView!
@@ -25,7 +25,6 @@ class RecordAudio: UIViewController,FileManagerDelegate{
     
 
     @IBAction func recoedButton(_ sender: Any) {
-        fileName = "record.m4a"
         //音声ファイルを用意する
         let fileUrl = fileSetting.fileSet(name:fileName)!
         //録音準備
@@ -51,14 +50,8 @@ class RecordAudio: UIViewController,FileManagerDelegate{
             self.performSegue(withIdentifier: "backToList", sender: nil)
             }
         
-        //画面遷移先に値を渡す
-        func  prepare(for segue: UIStoryboardSegue, sender: Any?){
-            if segue.identifier == "backToList" {
-                //値の受け渡し
-                let fileUrl = segue.destination as! Audiolist
-                Audiolist.fileNames.append(fileName)
-            }
-        }
+        //ファイル名の指定をするかを確認(filemanagerでurlを変更"moveitem?")
+        
         print("タップされたよ")
         
     }
