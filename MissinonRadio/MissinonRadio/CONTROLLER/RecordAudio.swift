@@ -10,6 +10,7 @@ import UIKit
 class RecordAudio: UIViewController,FileManagerDelegate{
     let fileSetting = FileSetting()
     let recordSetting = RecordSetting()
+    //タイムスタンプとかをファイル名の末尾にいれれたらいい
     let fileName = "record.m4a"
     
     @IBOutlet weak var statusLabel: UILabel!
@@ -44,11 +45,6 @@ class RecordAudio: UIViewController,FileManagerDelegate{
     @IBAction func stopButton(_ sender: Any) {
         recordSetting.recorder?.stop()
         statusLabel.text = "録音"
-        
-        //画面遷移
-        func segueToImageSave (){
-            self.performSegue(withIdentifier: "backToList", sender: nil)
-            }
         
         //ファイル名の指定をするかを確認(filemanagerでurlを変更"moveitem?")
         

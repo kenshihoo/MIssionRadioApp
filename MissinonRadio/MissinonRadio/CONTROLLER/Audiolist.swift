@@ -37,7 +37,6 @@ class Audiolist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AudioListCell", for: indexPath) as? AudioListCell else {
             fatalError("Dequeue failed: AudioListCell.")
         }
-        cell.audioNameLabel.text = FileList.fileNames[indexPath.row]
         return cell
     }
     
