@@ -15,5 +15,11 @@ class FileSetting{
         fileManager.urls(for: .documentDirectory,in: .userDomainMask)
             .first?.appendingPathComponent(name)
     }
+    
+    func contentsOfDirector
+    //ディレクトリ内のファイル一覧を取得
+    func getFileNames() {
+        
+    }
 }
 
