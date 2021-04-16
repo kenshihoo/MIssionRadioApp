@@ -16,10 +16,11 @@ class FileSetting{
             .first?.appendingPathComponent(name)
     }
     
-    func contentsOfDirector
+    
     //ディレクトリ内のファイル一覧を取得
-    func getFileNames() {
+    func getFileNames(name: String) {
         
+        _ = try? FileManager.default.contentsOfDirectory(atPath: name)
     }
 }
 

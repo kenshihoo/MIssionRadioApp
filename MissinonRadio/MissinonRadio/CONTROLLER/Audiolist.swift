@@ -14,6 +14,10 @@ class Audiolist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     var fileNames :String!
     
+    override func viewWillAppear(_ animated: Bool) {
+    //ファイル一覧を取得
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         audioList.dataSource = self
