@@ -11,7 +11,8 @@ class RecordAudio: UIViewController,FileManagerDelegate{
     let fileSetting = FileSetting()
     let recordSetting = RecordSetting()
     //タイムスタンプとかをファイル名の末尾にいれれたらいい
-    let fileName = "record.m4a"
+    let urlName = "record.m4a"
+    
     
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet var playButton: UIView!
@@ -22,12 +23,17 @@ class RecordAudio: UIViewController,FileManagerDelegate{
         //マイクの許可を実装
         recordSetting.requestPermission{ granted in
             guard granted else { return }}
+        
     }
     
 
     @IBAction func recoedButton(_ sender: Any) {
-        //音声ファイルを用意する
-        let fileUrl = fileSetting.fileSet(name:fileName)!
+        //ディレクトリを作成
+        let fileUrl = fileSetting.fileSet(name:urlName)!
+        
+        //タイムスタンプを取得
+        fileSetting.getRecordTime()
+        
         //録音準備
         recordSetting.preset()
         recordSetting.recordSetup(url: fileUrl)

@@ -11,20 +11,29 @@ class FileSetting{
     let fileManager: FileManager = .default
     var documentDirectoryFileURL :URL?
     
-    //ファイルurlの作成
+    //タイムスタンプを取得するメソッド
+    func getRecordTime()  {
+        let format = DateFormatter()
+        format.timeStyle = .medium
+        format.dateStyle = .medium
+        format.locale = Locale(identifier: "ja_JP")
+        let now = Date()
+        print(format.string(from: now))
+    }
+    
+    //ディレクトリのurlを作成
     func fileSet(name: String) -> URL? {
          documentDirectoryFileURL =  fileManager.urls(for: .documentDirectory,in: .userDomainMask)
             .first?.appendingPathComponent(name)
+        
+        return(documentDirectoryFileURL)
     }
     
     // ドキュメントディレクトリの「パス」（String型）定義
         let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
 
        //②保存するためのパスを作成する
-        func createLocalDataFile() {
-            // 作成するテキストファイルの名前
-            let fileName = "localData.png"
-
+    func createLocalDataFile(fileName:String) {
             // DocumentディレクトリのfileURLを取得
             if documentDirectoryFileURL != nil {
                 // ディレクトリのパスにファイル名をつなげてファイルのフルパスを作る
