@@ -11,7 +11,7 @@ class RecordAudio: UIViewController,FileManagerDelegate{
     let fileSetting = FileSetting()
     let recordSetting = RecordSetting()
     //タイムスタンプとかをファイル名の末尾にいれれたらいい
-    let urlName = "record.m4a"
+    var fileName :String!
     
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet var playButton: UIView!
@@ -30,8 +30,8 @@ class RecordAudio: UIViewController,FileManagerDelegate{
         //ディレクトリのurlをインスタンス化
         let fileUrl = AppDelegate().fileUrl!
         
-        //タイムスタンプを取得
-        fileSetting.getRecordTime()
+        //タイムスタンプをファイル名にする
+        fileName = "\(fileSetting.getRecordTime())"
         
         //録音準備
         recordSetting.preset()
