@@ -9,12 +9,29 @@ import Foundation
 
 class FileSetting{
     let fileManager: FileManager = .default
+    var documentDirectoryFileURL :URL?
     
-    //ファイルの作成
+    //ファイルurlの作成
     func fileSet(name: String) -> URL? {
-        fileManager.urls(for: .documentDirectory,in: .userDomainMask)
+         documentDirectoryFileURL =  fileManager.urls(for: .documentDirectory,in: .userDomainMask)
             .first?.appendingPathComponent(name)
     }
+    
+    // ドキュメントディレクトリの「パス」（String型）定義
+        let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+
+       //②保存するためのパスを作成する
+        func createLocalDataFile() {
+            // 作成するテキストファイルの名前
+            let fileName = "localData.png"
+
+            // DocumentディレクトリのfileURLを取得
+            if documentDirectoryFileURL != nil {
+                // ディレクトリのパスにファイル名をつなげてファイルのフルパスを作る
+                let path = documentDirectoryFileURL?.appendingPathComponent(fileName)
+                documentDirectoryFileURL = path
+            }
+        }
     
     
     //ディレクトリ内のファイル一覧を取得
