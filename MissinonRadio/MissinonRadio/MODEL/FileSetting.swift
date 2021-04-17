@@ -11,7 +11,7 @@ class FileSetting{
     let fileManager: FileManager = .default
     var documentDirectoryFileURL :URL?
     
-    //タイムスタンプを取得するメソッド
+    //タイムスタンプを取得する
     func getRecordTime()  {
         let format = DateFormatter()
         format.timeStyle = .medium

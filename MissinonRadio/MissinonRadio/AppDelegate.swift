@@ -10,10 +10,14 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var fileUrl :URL? = nil
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //ディレクトリを作成
+            //本当は同じurlのディレクトリが無い場合だけに呼び出したいメソッド
+        fileUrl = FileSetting().fileSet(name:"record.m4a")
         return true
     }
 
