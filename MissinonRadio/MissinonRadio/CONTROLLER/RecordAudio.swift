@@ -10,7 +10,7 @@ import UIKit
 class RecordAudio: UIViewController,FileManagerDelegate{
     let fileSetting = FileSetting()
     let recordSetting = RecordSetting()
-    //タイムスタンプとかをファイル名の末尾にいれれたらいい
+    let appDelegate = AppDelegate()
     var fileName :String!
     
     @IBOutlet weak var statusLabel: UILabel!
@@ -27,9 +27,10 @@ class RecordAudio: UIViewController,FileManagerDelegate{
     
 
     @IBAction func recoedButton(_ sender: Any) {
-        //ディレクトリのurlをインスタンス化
-        let fileUrl = AppDelegate().fileUrl!
-        
+        //ディレクトリを作成
+        //本当は同じurlのディレクトリが無い場合だけに呼び出したいメソッド
+        let fileUrl :URL! = appDelegate.fileUrl
+    
         //タイムスタンプをファイル名にする
         fileName = "\(fileSetting.getRecordTime())"
         

@@ -22,24 +22,21 @@ class FileSetting{
     }
     
     //ディレクトリのurlを作成
-    func fileSet(name: String) -> URL? {
+    func createDirectory(name: String) -> URL? {
          documentDirectoryFileURL =  fileManager.urls(for: .documentDirectory,in: .userDomainMask)
             .first?.appendingPathComponent(name)
         
         return(documentDirectoryFileURL)
     }
     
-    // ドキュメントディレクトリの「パス」（String型）定義
-        let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-
+    
        //②保存するためのパスを作成する
-    func createLocalDataFile(fileName:String) {
-            // DocumentディレクトリのfileURLを取得
-            if documentDirectoryFileURL != nil {
-                // ディレクトリのパスにファイル名をつなげてファイルのフルパスを作る
-                let path = documentDirectoryFileURL?.appendingPathComponent(fileName)
-                documentDirectoryFileURL = path
-            }
+    func createFilePath(fileUrl:URL,fileName:String) {
+        // ドキュメントディレクトリの「パス」（String型）定義
+            let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+
+            // DocumentディレクトリのfileURLを取得 ディレクトリのパスにファイル名をつなげてファイルのフルパスを作る
+                let path = fileUrl.appendingPathComponent(fileName)
         }
     
     

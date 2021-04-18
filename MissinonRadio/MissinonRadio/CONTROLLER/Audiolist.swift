@@ -22,8 +22,6 @@ class Audiolist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
         super.viewDidLoad()
         audioList.dataSource = self
         audioList.delegate = self
-//        audioList.register(Playlist.self, forCellReuseIdentifier: NSStringFromClass(Playlist.self))
-//               self.view.addSubview(audioList)
     }
     
     //セクションの数を指定(今回は1つ)
@@ -33,7 +31,8 @@ class Audiolist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     // TableViewに表示するセルの数を返す(本来はファイル数に合わせて出したい)
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fileNames.count
+//        return fileNames.count
+        return 1
     }
     
     // セルを生成する
