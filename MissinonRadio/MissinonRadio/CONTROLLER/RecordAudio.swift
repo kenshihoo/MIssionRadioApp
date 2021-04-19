@@ -27,16 +27,21 @@ class RecordAudio: UIViewController,FileManagerDelegate{
     
 
     @IBAction func recoedButton(_ sender: Any) {
-        //ディレクトリを作成
-        //本当は同じurlのディレクトリが無い場合だけに呼び出したいメソッド
-        let fileUrl :URL! = appDelegate.fileUrl
-    
         //タイムスタンプをファイル名にする
         fileName = "\(fileSetting.getRecordTime())"
         
+        //ディレクトリを作成
+        //本当は同じurlのディレクトリが無い場合だけに呼び出したいメソッド
+        let dirUrl :URL! = appDelegate.dirUrl
+        
+        //音声ファイル保存用のファイルURLを作成
+        let fileUrl = dirUrl.appendingPathComponent(fileName)
+        
+        
+        
         //録音準備
         recordSetting.preset()
-        recordSetting.recordSetup(url: fileUrl)
+        recordSetting.recordSetup(url: dirUrl)
         
         if recordSetting.recorder.isRecording == false {
             recordSetting.recorder?.record()

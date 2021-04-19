@@ -21,17 +21,21 @@ class FileSetting{
         print(format.string(from: now))
     }
     
-    //ディレクトリのurlを作成
-    func createDirectory(name: String) -> URL? {
-         documentDirectoryFileURL =  fileManager.urls(for: .documentDirectory,in: .userDomainMask)
-            .first?.appendingPathComponent(name)
-        
-        return(documentDirectoryFileURL)
+    //Documentsフォルダのurlを作成
+    func createDirectory() -> URL? {
+        guard let dirUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        else {
+                fatalError("ディレクトリのULR取得時のエラー")
+            }
+        return(dirUrl)
     }
+    
+        
     
     
        //②保存するためのパスを作成する
     func createFilePath(fileUrl:URL,fileName:String) {
+        
         // ドキュメントディレクトリの「パス」（String型）定義
             let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
 
