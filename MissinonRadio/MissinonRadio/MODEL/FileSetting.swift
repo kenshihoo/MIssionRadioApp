@@ -12,13 +12,13 @@ class FileSetting{
     var documentDirectoryFileURL :URL?
     
     //タイムスタンプを取得する
-    func getRecordTime()  {
+    func getRecordTime() -> String  {
         let format = DateFormatter()
         format.timeStyle = .medium
         format.dateStyle = .medium
         format.locale = Locale(identifier: "ja_JP")
         let now = Date()
-        print(format.string(from: now))
+        return(format.string(from: now))
     }
     
     //Documentsフォルダのurlを作成

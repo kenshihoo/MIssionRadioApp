@@ -28,16 +28,15 @@ class RecordAudio: UIViewController,FileManagerDelegate{
 
     @IBAction func recoedButton(_ sender: Any) {
         //タイムスタンプをファイル名にする
-        fileName = "\(fileSetting.getRecordTime())"
+        let timeStamp = fileSetting.getRecordTime()
+        fileName = "record.m4a\(timeStamp)"
         
         //ディレクトリを作成
         //本当は同じurlのディレクトリが無い場合だけに呼び出したいメソッド
         let dirUrl :URL! = appDelegate.dirUrl
         
         //音声ファイル保存用のファイルURLを作成
-        let fileUrl = dirUrl.appendingPathComponent(fileName)
-        
-        
+        let fileUrl = dirUrl.appendingPathComponent(timeStamp)
         
         //録音準備
         recordSetting.preset()
