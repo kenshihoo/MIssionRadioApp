@@ -7,8 +7,7 @@
 
 import UIKit
 
-class Audiolist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
-    
+class AudioListViewController:  UIViewController,UITableViewDelegate,UITableViewDataSource{
 
     @IBOutlet weak var audioList: UITableView!
     
@@ -16,6 +15,7 @@ class Audiolist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     override func viewWillAppear(_ animated: Bool) {
     //ファイル一覧を取得
+        
     }
     
     override func viewDidLoad() {
@@ -58,5 +58,4 @@ class Audiolist:  UIViewController,UITableViewDelegate,UITableViewDataSource{
     @IBAction func goRecordButton(_ sender: Any) {
         self.performSegue(withIdentifier: "goToRecord", sender: nil)
     }
-    
 }

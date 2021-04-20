@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class PlayAudio: UIViewController {
+class PlayAudioVewController: UIViewController {
 
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet var playButton: UIView!

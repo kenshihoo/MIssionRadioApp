@@ -7,9 +7,11 @@
 
 import UIKit
 
-class RecordAudio: UIViewController,FileManagerDelegate{
+class RecordAudioViewController: UIViewController,FileManagerDelegate{
     let fileSetting = FileSetting()
     let recordSetting = RecordSetting()
+    //appdelegateは他のところから参照するのはよくない
+    //インスタンスを使いまわしたい場合にはShared Instanceを使うといけるかも
     let appDelegate = AppDelegate()
     var fileName :String!
     var fileUrl:URL!
@@ -23,7 +25,6 @@ class RecordAudio: UIViewController,FileManagerDelegate{
         //マイクの許可を実装
         recordSetting.requestPermission{ granted in
             guard granted else { return }}
-        
     }
     
 
@@ -57,9 +58,8 @@ class RecordAudio: UIViewController,FileManagerDelegate{
         recordSetting.recorder?.stop()
         statusLabel.text = "録音"
         
-        //ファイル名の指定をするかを確認(filemanagerでurlを変更"moveitem?")
+        //ファイル名の指定をするかを確認したい(filemanagerでurlを変更"moveitem?")
         
         print("タップされたよ")
-        
     }
 }

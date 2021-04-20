@@ -30,7 +30,6 @@ class FileSetting{
         return(dirUrl)
     }
     
-    
     //ディレクトリ内のファイル一覧を取得
     func getFileNames(name: String) {
         

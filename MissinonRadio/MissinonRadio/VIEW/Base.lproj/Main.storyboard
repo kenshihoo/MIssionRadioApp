@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Record Audio-->
+        <!--Record Audio View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RecordAudio" customModule="MissinonRadio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RecordAudioViewController" customModule="MissinonRadio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="726" y="6"/>
         </scene>
-        <!--Play Audio-->
+        <!--Play Audio Vew Controller-->
         <scene sceneID="nD6-ir-gAZ">
             <objects>
-                <viewController id="qpY-6u-7dh" customClass="PlayAudio" customModule="MissinonRadio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qpY-6u-7dh" customClass="PlayAudioVewController" customModule="MissinonRadio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7AU-Jl-W11">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="752.79999999999995" y="734.48275862068976"/>
         </scene>
-        <!--Audiolist-->
+        <!--Audio List View Controller-->
         <scene sceneID="TLR-62-YoA">
             <objects>
-                <viewController id="KSH-3x-J3u" customClass="Audiolist" customModule="MissinonRadio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KSH-3x-J3u" customClass="AudioListViewController" customModule="MissinonRadio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rAb-GF-UgA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,14 +129,14 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AudioListCell" id="W2K-ou-lSh" customClass="AudioListCell" customModule="MissinonRadio" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="319" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="319" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W2K-ou-lSh" id="NoZ-bG-dZG">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ファイル名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOr-Ob-gcG">
-                                                    <rect key="frame" x="24" y="11" width="87" height="21.5"/>
+                                                    <rect key="frame" x="24" y="11" width="87" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
