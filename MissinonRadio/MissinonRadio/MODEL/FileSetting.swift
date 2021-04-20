@@ -30,19 +30,6 @@ class FileSetting{
         return(dirUrl)
     }
     
-        
-    
-    
-       //②保存するためのパスを作成する
-    func createFilePath(fileUrl:URL,fileName:String) {
-        
-        // ドキュメントディレクトリの「パス」（String型）定義
-            let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-
-            // DocumentディレクトリのfileURLを取得 ディレクトリのパスにファイル名をつなげてファイルのフルパスを作る
-                let path = fileUrl.appendingPathComponent(fileName)
-        }
-    
     
     //ディレクトリ内のファイル一覧を取得
     func getFileNames(name: String) {

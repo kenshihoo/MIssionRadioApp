@@ -12,6 +12,7 @@ class RecordAudio: UIViewController,FileManagerDelegate{
     let recordSetting = RecordSetting()
     let appDelegate = AppDelegate()
     var fileName :String!
+    var fileUrl:URL!
     
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet var playButton: UIView!
@@ -36,11 +37,11 @@ class RecordAudio: UIViewController,FileManagerDelegate{
         let dirUrl :URL! = appDelegate.dirUrl
         
         //音声ファイル保存用のファイルURLを作成
-        let fileUrl = dirUrl.appendingPathComponent(timeStamp)
+        fileUrl = dirUrl.appendingPathComponent(timeStamp)
         
         //録音準備
         recordSetting.preset()
-        recordSetting.recordSetup(url: dirUrl)
+        recordSetting.recordSetup(url: fileUrl)
         
         if recordSetting.recorder.isRecording == false {
             recordSetting.recorder?.record()
