@@ -84,9 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				E3B6E45925F7ABBF00DF87BA /* AudioListViewController.swift */,
-				E33885D3260CC2B000FE2E49 /* AudioListCell.swift */,
 				E347E63425DAA2F10048DF10 /* RecordAudioViewController.swift */,
 				E355B31E261F5F2F00C27768 /* PlayAudioVewController.swift */,
+				E33885D3260CC2B000FE2E49 /* AudioListCell.swift */,
 			);
 			path = CONTROLLER;
 			sourceTree = "<group>";
