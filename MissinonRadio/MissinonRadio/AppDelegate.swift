@@ -14,10 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        //ディレクトリを作成
-        //本当は同じurlのディレクトリが無い場合だけに呼び出したいメソッド
-        dirUrl  = FileSetting().createDirectory()
         return true
         
         

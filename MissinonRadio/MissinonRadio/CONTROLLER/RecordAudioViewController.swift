@@ -10,9 +10,7 @@ import UIKit
 class RecordAudioViewController: UIViewController,FileManagerDelegate{
     let fileSetting = FileSetting()
     let recordSetting = RecordSetting()
-    //appdelegateは他のところから参照するのはよくない
-    //インスタンスを使いまわしたい場合にはShared Instanceを使うといけるかも
-    let appDelegate = AppDelegate()
+
     var fileName :String!
     var fileUrl:URL!
     
@@ -35,10 +33,14 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate{
         
         //ディレクトリを作成
         //本当は同じurlのディレクトリが無い場合だけに呼び出したいメソッド
-        let dirUrl :URL! = appDelegate.dirUrl
+        //インスタンスを使いまわしたい場合にはShared Instanceを使うといけるかも
+        //ディレクトリを作成
+        //本当は同じurlのディレクトリが無い場合だけに呼び出したいメソッド
+        //gurd節使ったほうが良さそう
+       let dirUrl  = FileSetting().createDirectory()
         
         //音声ファイル保存用のファイルURLを作成
-        fileUrl = dirUrl.appendingPathComponent(timeStamp)
+        fileUrl = dirUrl?.appendingPathComponent(timeStamp)
         
         //録音準備
         recordSetting.preset()
