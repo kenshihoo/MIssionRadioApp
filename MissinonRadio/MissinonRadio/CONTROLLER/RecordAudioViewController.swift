@@ -11,6 +11,7 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate{
     let fileSetting = FileSetting()
     let recordSetting = RecordSetting()
 
+    var dirUrl:URL!
     var fileName :String!
     var fileUrl:URL!
     
@@ -19,6 +20,12 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //ディレクトリを作成
+        //本当は同じurlのディレクトリが無い場合だけに呼び出したいメソッド
+        //インスタンスを使いまわしたい場合にはShared Instanceを使うといけるかも
+        //gurd節使ったほうが良さそう
+       dirUrl  = FileSetting().createDirectory()
         
         //マイクの許可を実装
         recordSetting.requestPermission{ granted in
@@ -30,14 +37,6 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate{
         //タイムスタンプをファイル名にする
         let timeStamp = fileSetting.getRecordTime()
         fileName = "record.m4a\(timeStamp)"
-        
-        //ディレクトリを作成
-        //本当は同じurlのディレクトリが無い場合だけに呼び出したいメソッド
-        //インスタンスを使いまわしたい場合にはShared Instanceを使うといけるかも
-        //ディレクトリを作成
-        //本当は同じurlのディレクトリが無い場合だけに呼び出したいメソッド
-        //gurd節使ったほうが良さそう
-       let dirUrl  = FileSetting().createDirectory()
         
         //音声ファイル保存用のファイルURLを作成
         fileUrl = dirUrl?.appendingPathComponent(timeStamp)
