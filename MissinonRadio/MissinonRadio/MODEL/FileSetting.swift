@@ -7,9 +7,12 @@
 
 import Foundation
 
-class FileSetting{
-    let fileManager: FileManager = .default
-    var documentDirectoryFileURL :URL?
+class FileSetting:FileManager{
+    
+    //必要だと思って作ったけど不要そうなインスタンス
+    //let fileManager: FileManager = .default
+    let dirUrl = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("record.m4a")
+   
     
     //タイムスタンプを取得する
     func getRecordTime() -> String  {
@@ -21,21 +24,22 @@ class FileSetting{
         return(format.string(from: now))
     }
     
-    //Documentsフォルダのurlを作成
-    func createDirectory() -> URL? {
-        guard let dirUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-        else {
-                fatalError("ディレクトリのULR取得時のエラー")
-            }
-        return(dirUrl)
-    }
-    
-    
+   
     
     //ディレクトリ内のファイル一覧を取得
     func getFileNames(name: String) {
         
         _ = try? FileManager.default.contentsOfDirectory(atPath: name)
     }
+    
 }
 
+////Documentsフォルダのurlを作成
+////最初に作成したDocumentsフォルダのurl作成のメソッド
+//func createDirectory() -> URL? {
+//    guard let dirUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+//    else {
+//            fatalError("ディレクトリのULR取得時のエラー")
+//        }
+//    return(dirUrl)
+//}

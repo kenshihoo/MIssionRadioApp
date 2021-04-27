@@ -11,7 +11,7 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate{
     let fileSetting = FileSetting()
     let recordSetting = RecordSetting()
 
-    var dirUrl:URL!
+    let dirUrl:URL! = FileSetting().dirUrl
     var fileName :String!
     var fileUrl:URL!
     
@@ -20,12 +20,6 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //ディレクトリを作成
-        //本当は同じurlのディレクトリが無い場合だけに呼び出したいメソッド
-        //インスタンスを使いまわしたい場合にはShared Instanceを使うといけるかも
-        //gurd節使ったほうが良さそう
-       dirUrl  = FileSetting().createDirectory()
         
         //マイクの許可を実装
         recordSetting.requestPermission{ granted in
@@ -61,6 +55,7 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate{
         
         //ファイル名の指定をするかを確認したい(filemanagerでurlを変更"moveitem?")
         
+        dismiss(animated: true, completion: nil)
         print("タップされたよ")
     }
 }
