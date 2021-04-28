@@ -9,8 +9,6 @@ import Foundation
 
 class FileSetting:FileManager{
     
-    //必要だと思って作ったけど不要そうなインスタンス
-    //let fileManager: FileManager = .default
     let dirUrl = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("record.m4a")
    
     
@@ -24,10 +22,12 @@ class FileSetting:FileManager{
         return(format.string(from: now))
     }
     
-   
     
     //ディレクトリ内のファイル一覧を取得
     func getFileNames(name: String) {
+        guard let fileNames = try? FileManager.default.contentsOfDirectory(atPath: documentPath) else {
+            return nil
+        }
         
         _ = try? FileManager.default.contentsOfDirectory(atPath: name)
     }
