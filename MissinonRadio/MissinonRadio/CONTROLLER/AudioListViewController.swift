@@ -15,6 +15,7 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
     
     override func viewWillAppear(_ animated: Bool) {
     //ファイル一覧を取得
+        FileSetting.getFileNames(<#T##self: FileSetting##FileSetting#>)
         
     }
     
@@ -42,7 +43,6 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
         }
         return cell
     }
-    
     
     
 //セルがタップされたときの動き

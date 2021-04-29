@@ -24,12 +24,13 @@ class FileSetting:FileManager{
     
     
     //ディレクトリ内のファイル一覧を取得
-    func getFileNames(name: String) {
-        guard let fileNames = try? FileManager.default.contentsOfDirectory(atPath: documentPath) else {
-            return nil
-        }
+    func getFileNames() -> [String] {
+        let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString
         
-        _ = try? FileManager.default.contentsOfDirectory(atPath: name)
+        guard let fileNames = try? FileManager.default.contentsOfDirectory(atPath: documentPath) else {
+            return ["ファイル一覧取得エラー"]
+        }
+        return fileNames
     }
     
 }

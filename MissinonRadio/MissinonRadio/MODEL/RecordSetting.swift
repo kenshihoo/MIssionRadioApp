@@ -11,9 +11,7 @@ import AVFoundation
 class RecordSetting{
     let session = AVAudioSession.sharedInstance()
     var recorder: AVAudioRecorder!
-    var url :URL{
-            return recorder.url
-        }
+    
     
     //録音フォーマットの設定
     let formatSettig: [String: Any] = [
