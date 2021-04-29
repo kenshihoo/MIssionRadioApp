@@ -11,11 +11,12 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
 
     @IBOutlet weak var audioList: UITableView!
     
-    var fileNames :String!
+    var fileNames :[String]? = nil
     
     override func viewWillAppear(_ animated: Bool) {
+        
     //ファイル一覧を取得
-        FileSetting.getFileNames(<#T##self: FileSetting##FileSetting#>)
+        let names = FileSetting.getFileNames()
         
     }
     
