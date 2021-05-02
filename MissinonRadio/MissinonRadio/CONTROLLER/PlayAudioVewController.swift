@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class PlayAudioVewController: UIViewController {
+class PlayAudioVewController: UIViewController,AVAudioPlayerDelegate,FileManagerDelegate  {
 
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet var playButton: UIView!
@@ -18,8 +18,6 @@ class PlayAudioVewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
 
     }
     

@@ -10,14 +10,10 @@ import UIKit
 class AudioListViewController:  UIViewController,UITableViewDelegate,UITableViewDataSource{
 
     @IBOutlet weak var audioList: UITableView!
-    
-    var fileNames :[String]? = nil
+    var fileUrlList :[URL] = []
     
     override func viewWillAppear(_ animated: Bool) {
-        
-    //ファイル一覧を取得
-        let names = FileSetting.getFileNames()
-        
+        fileUrlList = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     }
     
     override func viewDidLoad() {
@@ -31,10 +27,10 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
         return 1
     }
     
-    // TableViewに表示するセルの数を返す(本来はファイル数に合わせて出したい)
+    // TableViewに表示するセルの数を返す
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return fileNames.count
-        return 1
+        
+        return fileUrlList.count
     }
     
     // セルを生成する
@@ -44,7 +40,6 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
         }
         return cell
     }
-    
     
 //セルがタップされたときの動き
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

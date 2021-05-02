@@ -9,9 +9,6 @@ import Foundation
 
 class FileSetting:FileManager{
     
-    let dirUrl = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("record.m4a")
-   
-    
     //タイムスタンプを取得する
     func getRecordTime() -> String  {
         let format = DateFormatter()
@@ -23,24 +20,20 @@ class FileSetting:FileManager{
     }
     
     
-    //ディレクトリ内のファイル一覧を取得
-    func getFileNames() -> [String] {
-        let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString
-        
-        guard let fileNames = try? FileManager.default.contentsOfDirectory(atPath: documentPath) else {
-            return ["ファイル一覧取得エラー"]
-        }
-        return fileNames
+    //録音データを入れるfileのurlを取得
+    func getFileNames(fileName:String) -> URL  {
+        guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+                  fatalError("documentDirectoryのURL取得エラーでアプリをクラッシュさせました")
+              }
+        let fileURL = dirURL.appendingPathComponent(fileName)
+        return fileURL
     }
     
+    //録音データを書き込む
+    func writefile(fileUrl:URL,data:String){
+        do {
+            try data.write(to: fileUrl, atomically: true, encoding: .utf8)
+            }
+        catch {print("書き込み時のエラーです: \(error)")}
+    }
 }
-
-////Documentsフォルダのurlを作成
-////最初に作成したDocumentsフォルダのurl作成のメソッド
-//func createDirectory() -> URL? {
-//    guard let dirUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-//    else {
-//            fatalError("ディレクトリのULR取得時のエラー")
-//        }
-//    return(dirUrl)
-//}
