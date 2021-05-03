@@ -11,6 +11,7 @@ import AVFoundation
 class RecordAudioViewController: UIViewController,FileManagerDelegate, AVAudioRecorderDelegate{
     let fileSetting = FileSetting()
     let recordSetting = RecordSetting()
+    var timeStamp : String!
     
     
     @IBOutlet weak var statusLabel: UILabel!
@@ -27,10 +28,13 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate, AVAudioRe
     
 
     @IBAction func recoedButton(_ sender: Any) {
+        
+        if timeStamp == nil{
         //タイムスタンプをファイル名にする
-        let timeStamp = fileSetting.getRecordTime()
-        let fileName = "\(timeStamp).mp4a"
-        fileNameLabel.text = fileName
+        timeStamp = fileSetting.getRecordTime()
+        }
+        let fileName = "\(timeStamp!).mp4a"
+        fileNameLabel.text = timeStamp
         
         //音声ファイル保存用のファイルURLを作成
         let fileUrl = fileSetting.getFileNames(fileName: fileName)

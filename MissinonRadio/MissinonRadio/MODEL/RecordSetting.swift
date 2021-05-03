@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-class RecordSetting{
+class RecordSetting:FileManager, AVAudioRecorderDelegate{
     let session = AVAudioSession.sharedInstance()
     var recorder: AVAudioRecorder!
     
@@ -40,7 +40,7 @@ class RecordSetting{
     }
     
     func recordSetup(url: URL){
-        recorder = try! AVAudioRecorder(url: url, settings: formatSettig)
+        recorder = try? AVAudioRecorder(url: url, settings: formatSettig)
         // 録音を準備する
         recorder?.prepareToRecord()
     }

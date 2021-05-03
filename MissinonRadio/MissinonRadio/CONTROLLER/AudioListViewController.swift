@@ -13,13 +13,15 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
     var fileUrlList :[URL] = []
     
     override func viewWillAppear(_ animated: Bool) {
+        audioList.reloadData()
         fileUrlList = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print("今のurlsは\(fileUrlList)")
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         audioList.dataSource = self
         audioList.delegate = self
+        
     }
     
     //セクションの数を指定(今回は1つ)
@@ -38,6 +40,7 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AudioListCell", for: indexPath) as? AudioListCell else {
             fatalError("Dequeue failed: AudioListCell.")
         }
+        cell.audioNameLabel.text = fileUrlList[indexPath.row].fragment
         return cell
     }
     
@@ -54,4 +57,5 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
     @IBAction func goRecordButton(_ sender: Any) {
         self.performSegue(withIdentifier: "goToRecord", sender: nil)
     }
+
 }

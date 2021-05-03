@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RecordAudioViewController" customModule="MissinonRadio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0M-CR-2eo">
@@ -51,6 +51,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Chr-L8-Vh8"/>
                     <connections>
                         <outlet property="fileNameLabel" destination="13T-ov-7fv" id="Ybz-Tb-Xz8"/>
                         <outlet property="playButton" destination="8bC-Xf-vdC" id="VO0-mP-Orn"/>
@@ -134,14 +135,14 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AudioListCell" id="W2K-ou-lSh" customClass="AudioListCell" customModule="MissinonRadio" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="319" height="43"/>
+                                        <rect key="frame" x="0.0" y="28" width="319" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W2K-ou-lSh" id="NoZ-bG-dZG">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="録音データはありません" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOr-Ob-gcG">
-                                                    <rect key="frame" x="24" y="11" width="191" height="21"/>
+                                                    <rect key="frame" x="24" y="11" width="191" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -173,7 +174,7 @@
                     <navigationItem key="navigationItem" id="sC4-MR-UYE"/>
                     <connections>
                         <outlet property="audioList" destination="i3a-c8-4yO" id="yxK-cs-sop"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToRecord" id="Ud7-eL-cku"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToRecord" modalPresentationStyle="fullScreen" id="Ud7-eL-cku"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7e-OI-ABM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
