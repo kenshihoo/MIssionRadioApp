@@ -41,7 +41,7 @@ class FileSetting:FileManager{
             
             // ファイルが存在しないため、新規に作成する
        let _ = try! AVAudioFile(forWriting: fileURL,
-                            settings: RecordSetting().formatSettig,
+                                settings: RecordSetting().formatSettig,
                                             commonFormat: AVAudioCommonFormat.pcmFormatFloat32,
                                             interleaved: true)
 //            if FileManager.default.createFile(atPath: fileURL.path,contents: nil,attributes: nil) == true {
