@@ -14,7 +14,7 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         audioList.reloadData()
-        fileUrlList = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//        fileUrlList = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         print("今のurlsは\(fileUrlList)")
     }
     

@@ -7,11 +7,10 @@
 
 import Foundation
 import AVFoundation
-
-
-
 class FileSetting:FileManager{
     let recordSetting = RecordSetting()
+    var audioFile:AVAudioFile!
+    
     
     //タイムスタンプを取得する
     func getRecordTime() -> String  {
@@ -40,15 +39,17 @@ class FileSetting:FileManager{
             print("ファイルを新規作成します")
             
             // ファイルが存在しないため、新規に作成する
-       let _ = try! AVAudioFile(forWriting: fileURL,
-                                settings: RecordSetting().formatSettig,
-                                            commonFormat: AVAudioCommonFormat.pcmFormatFloat32,
-                                            interleaved: true)
-//            if FileManager.default.createFile(atPath: fileURL.path,contents: nil,attributes: nil) == true {
+            do{
+                
+                 try audioFile = AVAudioFile(forWriting:fileURL,settings: RecordSetting().formatSettig)}
+//                    forWriting: fileURL,settings: RecordSetting().formatSettig,commonFormat: AVAudioCommonFormat.pcmFormatFloat32,interleaved: true)}
+                catch{print("ファイル作成エラー")}
+//            if FileManager.default.createFile(atPath: fileURL.path,contents: nil,attributes: nil) == true{
 //               print( "ファイルを新規作成")
 //            } else {
 //                print("ファイルの新規作成に失敗")
-            }
+//            }
+        }
         return fileURL
         }
     
