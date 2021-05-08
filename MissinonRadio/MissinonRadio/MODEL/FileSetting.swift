@@ -11,7 +11,6 @@ class FileSetting:FileManager{
     let recordSetting = RecordSetting()
     var audioFile:AVAudioFile!
     
-    
     //タイムスタンプを取得する
     func getRecordTime() -> String  {
         let format = DateFormatter()
@@ -42,7 +41,6 @@ class FileSetting:FileManager{
             do{
                 
                  try audioFile = AVAudioFile(forWriting:fileURL,settings: RecordSetting().formatSettig)}
-//                    forWriting: fileURL,settings: RecordSetting().formatSettig,commonFormat: AVAudioCommonFormat.pcmFormatFloat32,interleaved: true)}
                 catch{print("ファイル作成エラー")}
 //            if FileManager.default.createFile(atPath: fileURL.path,contents: nil,attributes: nil) == true{
 //               print( "ファイルを新規作成")

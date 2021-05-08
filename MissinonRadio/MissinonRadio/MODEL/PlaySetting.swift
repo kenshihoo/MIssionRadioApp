@@ -14,6 +14,13 @@ class PlaySetting{
     var audioPlayer: AVAudioPlayer?
     var isPlaying: Bool { audioPlayer?.isPlaying ?? false }
     
+    
+   
+    func setupPlayer(with url: URL) { // プレイヤーを作成
+        audioPlayer = try! AVAudioPlayer(contentsOf: url)
+        audioPlayer?.prepareToPlay()
+    }
+    
     func playAudio(url: URL){
         do {
             let audioFile = try AVAudioFile(forReading: url)
@@ -26,11 +33,7 @@ class PlaySetting{
                 print(error)
             }
         }
-   
-    func setupPlayer(with url: URL) { // プレイヤーを作成
-        audioPlayer = try! AVAudioPlayer(contentsOf: url)
-        audioPlayer?.prepareToPlay()
-    }
+    
     func play(currentTime: Double) { // 再生位置を決めて再生
         audioPlayer?.currentTime = currentTime
         audioPlayer?.play()
