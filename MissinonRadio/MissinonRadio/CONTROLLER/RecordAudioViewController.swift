@@ -45,6 +45,7 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate, AVAudioRe
         
         if recordSetting.recorder.isRecording == false {
             recordSetting.recorder?.record()
+            fileSetting.writefile(fileUrl: fileUrl,data:"hoge")
             statusLabel.text = "録音中"
         }
             else{
