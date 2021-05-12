@@ -30,8 +30,11 @@ class FileSetting:FileManager{
         print("取得したdireUrlは\(dirURL)です")
         let fileURL = dirURL.appendingPathComponent(fileName)
         print("fileURL\(fileURL)を取得")
-        
-//        // fileNameのファイルが作成されていない場合には、新規でファイルを作成する
+        return fileURL
+        }
+}
+
+//fileNameのファイルが作成されていない場合には、新規でファイルを作成する
 //        if FileManager.default.fileExists(atPath: fileURL.path) == true {
 //            print("すでにあるファイルがあるので新規作成しません")
 //        } else {
@@ -49,16 +52,3 @@ class FileSetting:FileManager{
 //                print("ファイルの新規作成に失敗")
 //            }
 //        }
-        return fileURL
-        }
-    
-    
-    
-    //録音データを書き込む
-    func writefile(fileUrl:URL,data:String){
-        do {
-            try data.write(to: fileUrl, atomically: true, encoding: .utf8)
-            }
-        catch {print("書き込み時のエラーです: \(error)")}
-    }
-}
