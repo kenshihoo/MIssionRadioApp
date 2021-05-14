@@ -11,6 +11,7 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
 
     @IBOutlet weak var audioList: UITableView!
     var fileUrlList :[URL] = []
+    var selectedFileUrl :URL!
     
     override func viewWillAppear(_ animated: Bool) {
         audioList.reloadData()
@@ -46,6 +47,8 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
     
 //セルがタップされたときの動き
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedFileUrl = fileUrlList[indexPath.row]
         //画面遷移
         func segueToImageSave (){
             self.performSegue(withIdentifier: "goToplay", sender: nil)
@@ -66,7 +69,7 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
         if (segue.identifier == "goToplay") {
             let PlayAudio: PlayAudioVewController = (segue.destination as? PlayAudioVewController)!
             // SubViewController のselectedImgに選択された画像を設定する
-            PlayAudio.fileUrl = "\(fileUrlList[1])"
+            PlayAudio.fileUrl = selectedFileUrl
         }
     }
 

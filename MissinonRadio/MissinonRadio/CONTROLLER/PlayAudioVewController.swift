@@ -9,20 +9,29 @@ import UIKit
 import AVFoundation
 
 class PlayAudioVewController: UIViewController,AVAudioPlayerDelegate,FileManagerDelegate  {
-
+    let playSetting =  PlaySetting()
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var currentTimeLabel: UILabel!
-    
-    var fileUrl :String!
+    var fileUrl :URL!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if fileUrl != nil{
+            playSetting.setupPlayer(with: fileUrl)
+        }
+        else{
+            print("fileUrlの取得エラー")
+        }
     }
     
     
     @IBAction func plyaButton(_ sender: Any) {
-        
+        if fileUrl != nil{
+            playSetting.playAudio(url: fileUrl)
+        }
+        else{
+            print("fileUrlの取得エラー")
+        }
     }
     
     /*
