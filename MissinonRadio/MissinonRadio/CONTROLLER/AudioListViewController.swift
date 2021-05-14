@@ -50,12 +50,15 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
         func segueToImageSave (){
             self.performSegue(withIdentifier: "goToplay", sender: nil)
             }
+        
+        // セルの選択を解除
+        audioList.deselectRow(at: indexPath, animated: true)
         print("タップされたよ")
     }
     
     //録音Buttonから録音画面を表示させる
     @IBAction func goRecordButton(_ sender: Any) {
         self.performSegue(withIdentifier: "goToRecord", sender: nil)
+        
     }
-
 }

@@ -11,7 +11,6 @@ import AVFoundation
 class PlayAudioVewController: UIViewController,AVAudioPlayerDelegate,FileManagerDelegate  {
 
     @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet var playButton: UIView!
     @IBOutlet weak var currentTimeLabel: UILabel!
     
     var fileUrl :String!
@@ -22,6 +21,9 @@ class PlayAudioVewController: UIViewController,AVAudioPlayerDelegate,FileManager
     }
     
     
+    @IBAction func plyaButton(_ sender: Any) {
+        
+    }
     
     /*
     // MARK: - Navigation
