@@ -59,6 +59,15 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
     //録音Buttonから録音画面を表示させる
     @IBAction func goRecordButton(_ sender: Any) {
         self.performSegue(withIdentifier: "goToRecord", sender: nil)
-        
     }
+    
+    // Segue 準備
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "goToplay") {
+            let PlayAudio: PlayAudioVewController = (segue.destination as? PlayAudioVewController)!
+            // SubViewController のselectedImgに選択された画像を設定する
+            PlayAudio.fileUrl = "\(fileUrlList[1])"
+        }
+    }
+
 }
