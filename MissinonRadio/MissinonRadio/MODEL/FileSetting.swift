@@ -24,7 +24,8 @@ class FileSetting:FileManager{
     
     //録音データを入れるファイルのurl取得とファイル作成
     func getFileNames(fileName:String) -> URL  {
-        guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+        guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+            else {
                   fatalError("documentDirectoryのURL取得エラーでアプリをクラッシュさせました")
               }
         print("取得したdireUrlは\(dirURL)です")

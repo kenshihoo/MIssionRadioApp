@@ -40,8 +40,8 @@ class RecordSetting:FileManager, AVAudioRecorderDelegate{
     }
     
     func recordSetup(url: URL){
-        recorder = try? AVAudioRecorder(url: url, settings: formatSettig)
+        recorder = try! AVAudioRecorder(url: url, settings: formatSettig)
         // 録音を準備する
-        recorder?.prepareToRecord()
+        recorder!.prepareToRecord()
     }
 }

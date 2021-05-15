@@ -26,12 +26,23 @@ class PlayAudioVewController: UIViewController,AVAudioPlayerDelegate,FileManager
     
     
     @IBAction func plyaButton(_ sender: Any) {
+        if  playSetting.audioPlayer?.isPlaying != true{
         if fileUrl != nil{
             playSetting.playAudio(url: fileUrl)
+            statusLabel.text = "一時停止"
         }
         else{
             print("fileUrlの取得エラー")
         }
+        }else{
+            playSetting.pause()
+            statusLabel.text = "再生"
+        }
+    }
+    
+    @IBAction func stopButton(_ sender: Any) {
+        playSetting.stop()
+        dismiss(animated: true, completion: nil)
     }
     
     /*

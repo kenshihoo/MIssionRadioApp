@@ -15,14 +15,13 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         audioList.reloadData()
-        fileUrlList = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        fileUrlList  = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         print("今のurlsは\(fileUrlList)")
     }
     
     override func viewDidLoad() {
         audioList.dataSource = self
         audioList.delegate = self
-        
     }
     
     //セクションの数を指定(今回は1つ)
@@ -32,7 +31,7 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
     
     // TableViewに表示するセルの数を返す
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        print("セルの数は\(fileUrlList.count)個です")
         return fileUrlList.count
     }
     

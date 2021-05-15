@@ -41,4 +41,7 @@ class PlaySetting{
     func pause() { // 再生を一時停止
         audioPlayer?.pause()
     }
+    func stop()  {
+        audioPlayer?.stop()
+    }
 }
