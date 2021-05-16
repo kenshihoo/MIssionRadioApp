@@ -35,17 +35,17 @@ class FileSetting:FileManager{
         }
 }
 
-//fileNameのファイルが作成されていない場合には、新規でファイルを作成する
+////fileNameのファイルが作成されていない場合には、新規でファイルを作成する
 //        if FileManager.default.fileExists(atPath: fileURL.path) == true {
 //            print("すでにあるファイルがあるので新規作成しません")
 //        } else {
 //            print("ファイルを新規作成します")
 //
-//            // ファイルが存在しないため、新規に作成する
-////            do{
-////
-////                 try audioFile = AVAudioFile(forWriting:fileURL,settings: RecordSetting().formatSettig)}
-////                catch{print("ファイル作成エラー")}
+////             ファイルが存在しないため、新規に作成する
+//            do{
+//
+//                 try audioFile = AVAudioFile(forWriting:fileURL,settings: RecordSetting().formatSettig)}
+//            catch{print("ファイル作成エラー")}
 //
 //            if FileManager.default.createFile(atPath: fileURL.path,contents: nil,attributes: nil) == true{
 //               print( "ファイルを新規作成")

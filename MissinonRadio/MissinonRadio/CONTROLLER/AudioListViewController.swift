@@ -55,7 +55,7 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
         
         // セルの選択を解除
         audioList.deselectRow(at: indexPath, animated: true)
-        print("タップされたよ")
+        print("セルがタップされたよ")
     }
     
     //録音Buttonから録音画面を表示させる

@@ -12,7 +12,6 @@ class RecordSetting:FileManager, AVAudioRecorderDelegate{
     let session = AVAudioSession.sharedInstance()
     var recorder: AVAudioRecorder!
     
-    
     //録音フォーマットの設定
     let formatSettig: [String: Any] = [
         // MPEG-4 AACコーデックを指定するキー
@@ -34,14 +33,29 @@ class RecordSetting:FileManager, AVAudioRecorderDelegate{
     
     func preset(){
         //録音と再生の両方を可能にする
-        try? session.setCategory(.playAndRecord)
+        try! session.setCategory(.playAndRecord)
         //sessionをアクティブにする
-        try? session.setActive(true)
+        try! session.setActive(true)
+        print("preset完了")
     }
     
     func recordSetup(url: URL){
-        recorder = try! AVAudioRecorder(url: url, settings: formatSettig)
+        self.recorder = try! AVAudioRecorder(url: url, settings: formatSettig)
+    
         // 録音を準備する
         recorder!.prepareToRecord()
+        print("setup完了")
+    }
+    
+    func record()  {
+        recorder.record()
+    }
+    
+    func pause () {
+        recorder.pause()
+    }
+    
+    func stop(){
+        recorder.stop()
     }
 }
