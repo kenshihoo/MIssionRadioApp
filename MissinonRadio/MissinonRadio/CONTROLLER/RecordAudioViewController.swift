@@ -38,7 +38,6 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate, AVAudioRe
         //録音準備
         recordSetting.preset()
         recordSetting.recordSetup(url: fileUrl)
-        recordSetting.recorder.delegate = self
         
         
         if recordSetting.recorder.isRecording == false {
