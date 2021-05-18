@@ -30,7 +30,8 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate, AVAudioRe
         if fileUrl == nil {
         //タイムスタンプをファイル名にする
         let timeStamp = fileSetting.getRecordTime()
-        fileName = "\(timeStamp).mp4a"
+//        fileName = "\(timeStamp).mp4a"
+            fileName = "record.m4a"
         fileNameLabel.text = timeStamp
         //音声ファイル保存用のファイルURLを作成
         fileUrl = fileSetting.getFileNames(fileName: fileName)
