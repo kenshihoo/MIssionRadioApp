@@ -67,7 +67,6 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "goToplay") {
             let PlayAudio: PlayAudioVewController = (segue.destination as? PlayAudioVewController)!
-            // SubViewController のselectedImgに選択された画像を設定する
             PlayAudio.fileUrl = selectedFileUrl
         }
     }

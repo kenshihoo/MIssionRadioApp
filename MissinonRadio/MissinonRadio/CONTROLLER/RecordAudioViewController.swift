@@ -56,7 +56,11 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate, AVAudioRe
         
         //ファイル名の指定をするかを確認したい(filemanagerでurlを変更"moveitem?")
         
-        dismiss(animated: true, completion: nil)
+        //画面を戻る
+//        dismiss(animated: true, completion: nil)
         print("録音を修了したよ")
+        let playsetting = PlaySetting()
+        playsetting.setupPlayer(with: fileUrl)
+        playsetting.playAudio(url: fileUrl)
     }
 }

@@ -8,7 +8,6 @@
 import Foundation
 import AVFoundation
 class FileSetting:FileManager{
-    let recordSetting = RecordSetting()
     var audioFile:AVAudioFile!
     
     //タイムスタンプを取得する
