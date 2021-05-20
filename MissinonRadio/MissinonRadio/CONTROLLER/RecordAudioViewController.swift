@@ -47,7 +47,8 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate, AVAudioRe
             statusLabel.text = "録音中"}
             else{
                 recordSetting.pause()
-                statusLabel.text = "録音停止中"}
+                statusLabel.text = "録音停止中"
+            }
     }
     
     @IBAction func stopButton(_ sender: Any) {
@@ -56,8 +57,7 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate, AVAudioRe
         
         //ファイル名の指定をするかを確認したい(filemanagerでurlを変更"moveitem?")
         
-        //画面を戻る
-//        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
         print("録音を修了したよ")
         let playsetting = PlaySetting()
         playsetting.setupPlayer(with: fileUrl)

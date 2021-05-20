@@ -9,6 +9,7 @@ import Foundation
 import AVFoundation
 class FileSetting:FileManager{
     var audioFile:AVAudioFile!
+    let fileManager = FileManager()
     
     //タイムスタンプを取得する
     func getRecordTime() -> String  {
@@ -32,9 +33,27 @@ class FileSetting:FileManager{
         print("fileURL\(fileURL)を取得")
         return fileURL
         }
+    
+    func getFileArray() -> [String]{
+        var filelist : [String] = []
+        let path = Bundle.main.bundlePath
+        do {
+            let files = try fileManager.contentsOfDirectory(atPath: path)
+            
+            for file in files {
+                // ファイル名の後方が.pngであればtrueとなる
+                if file.hasSuffix(".m4a") {
+                    filelist.append(file)
+                }
+            }
+    }
+    catch let error {
+        print(error)
+        }
+        return filelist
+    }
 }
-
-////fileNameのファイルが作成されていない場合には、新規でファイルを作成する
+///fileNameのファイルが作成されていない場合には、新規でファイルを作成する
 //        if FileManager.default.fileExists(atPath: fileURL.path) == true {
 //            print("すでにあるファイルがあるので新規作成しません")
 //        } else {
