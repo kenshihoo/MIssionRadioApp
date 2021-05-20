@@ -12,11 +12,13 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
     @IBOutlet weak var audioList: UITableView!
     var fileUrlList :[URL] = []
     var selectedFileUrl :URL!
+    let filesetting = FileSetting()
     
     override func viewWillAppear(_ animated: Bool) {
         audioList.reloadData()
         fileUrlList  = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         print("今のurlsは\(fileUrlList)")
+        print("\(filesetting.getFileArray())")
     }
     
     override func viewDidLoad() {
