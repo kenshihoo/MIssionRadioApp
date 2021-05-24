@@ -36,21 +36,17 @@ class FileSetting:FileManager{
     
     func getFileArray() -> [String]{
         var filelist : [String] = []
-        let path = Bundle.main.bundlePath
-        do {
-            let files = try fileManager.contentsOfDirectory(atPath: path)
-            
-            for file in files {
-                // ファイル名の後方が.pngであればtrueとなる
-                if file.hasSuffix(".m4a") {
-                    filelist.append(file)
-                }
+        
+        let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            do {
+                let contentUrls = try FileManager.default.contentsOfDirectory(at: dirURL, includingPropertiesForKeys: nil)
+                filelist = contentUrls.map{$0.lastPathComponent}
+                print(filelist)
             }
-    }
-    catch let error {
-        print(error)
-        }
-        return filelist
+            catch let error {
+                print(error)
+                }
+            return filelist
     }
 }
 ///fileNameのファイルが作成されていない場合には、新規でファイルを作成する

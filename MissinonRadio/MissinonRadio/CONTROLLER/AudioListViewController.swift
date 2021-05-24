@@ -10,13 +10,12 @@ import UIKit
 class AudioListViewController:  UIViewController,UITableViewDelegate,UITableViewDataSource{
 
     @IBOutlet weak var audioList: UITableView!
-    var fileUrlList :[URL] = []
+    var fileUrlList :[String] = []
     var selectedFileUrl :URL!
     let filesetting = FileSetting()
     
     override func viewWillAppear(_ animated: Bool) {
         audioList.reloadData()
-        fileUrlList  = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         print("今のurlsは\(fileUrlList)")
         print("\(filesetting.getFileArray())")
     }
@@ -42,14 +41,14 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AudioListCell", for: indexPath) as? AudioListCell else {
             fatalError("Dequeue failed: AudioListCell.")
         }
-        cell.audioNameLabel.text = fileUrlList[indexPath.row].fragment
+//        cell.audioNameLabel.text = fileUrlList[indexPath.row].fragment
         return cell
     }
     
 //セルがタップされたときの動き
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        selectedFileUrl = fileUrlList[indexPath.row]
+//        selectedFileUrl = fileUrlList[indexPath.row]
         //画面遷移
         func segueToImageSave (){
             self.performSegue(withIdentifier: "goToplay", sender: nil)
