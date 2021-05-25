@@ -9,14 +9,18 @@ import UIKit
 import AVFoundation
 
 class PlayAudioVewController: UIViewController,AVAudioPlayerDelegate,FileManagerDelegate  {
+    let filesetting = FileSetting()
     let playSetting =  PlaySetting()
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var currentTimeLabel: UILabel!
+    var filePath :String!
     var fileUrl :URL!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if fileUrl != nil{
+        print(filePath)
+        if filePath != nil{
+            fileUrl = filesetting.getFileNames(fileName: filePath)
             playSetting.setupPlayer(with: fileUrl)
         }
         else{
