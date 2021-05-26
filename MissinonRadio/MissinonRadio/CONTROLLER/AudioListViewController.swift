@@ -45,9 +45,16 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
         return cell
     }
     
+    // Segue 準備
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "goToplay") {
+            let PlayAudio: PlayAudioVewController = (segue.destination as? PlayAudioVewController)!
+            PlayAudio.filePath =  selectedFilePath
+        }
+    }
+    
 //セルがタップされたときの動き
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         selectedFilePath = fileUrlList[indexPath.row]
         //画面遷移
         func segueToImageSave (){
@@ -64,12 +71,6 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
         self.performSegue(withIdentifier: "goToRecord", sender: nil)
     }
     
-    // Segue 準備
-    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        if (segue.identifier == "goToplay") {
-            let PlayAudio: PlayAudioVewController = (segue.destination as? PlayAudioVewController)!
-            PlayAudio.filePath =  selectedFilePath
-        }
-    }
+    
 
 }
