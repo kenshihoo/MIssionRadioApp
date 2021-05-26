@@ -158,6 +158,12 @@
                                     <action selector="goRecordButton:" destination="KSH-3x-J3u" eventType="touchUpInside" id="MqV-Vd-RoY"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T7d-WW-pVE">
+                                <rect key="frame" x="28" y="20" width="319" height="259"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="3gX-YK-Y67"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="SCd-Sc-aiD"/>
+                            </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i3a-c8-4yO">
                                 <rect key="frame" x="28" y="23" width="319" height="256"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
