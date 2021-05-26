@@ -15,14 +15,15 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
     let filesetting = FileSetting()
     
     override func viewWillAppear(_ animated: Bool) {
-        audioList.reloadData()
-        fileUrlList = filesetting.getFileArray()
-        print("今のurlsは\(fileUrlList)")
+        
     }
     
     override func viewDidLoad() {
         audioList.dataSource = self
         audioList.delegate = self
+        audioList.reloadData()
+        fileUrlList = filesetting.getFileArray()
+        print("今のurlsは\(fileUrlList)")
     }
     
     //セクションの数を指定(今回は1つ)
