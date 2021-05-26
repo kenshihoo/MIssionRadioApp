@@ -24,15 +24,12 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate, AVAudioRe
         recordSetting.requestPermission{ granted in
             guard granted else { return }}
         
-    }
-
-    @IBAction func recoedButton(_ sender: Any) {
         if fileUrl == nil {
         //タイムスタンプをファイル名にする
         let timeStamp = fileSetting.getRecordTime()
 //        fileName = "\(timeStamp).mp4a"
             fileName = "record.m4a"
-        fileNameLabel.text = timeStamp
+            fileNameLabel.text =  timeStamp
         //音声ファイル保存用のファイルURLを作成
         fileUrl = fileSetting.getFileNames(fileName: fileName)
         }
@@ -40,6 +37,9 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate, AVAudioRe
         recordSetting.preset()
         recordSetting.recordSetup(url: fileUrl)
         
+    }
+
+    @IBAction func recoedButton(_ sender: Any) {
         
         if recordSetting.recorder.isRecording == false {
             

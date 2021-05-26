@@ -48,6 +48,10 @@ class RecordSetting:FileManager, AVAudioRecorderDelegate{
         print("setup完了")
     }
     
+    func timeCount(){
+        
+    }
+    
     func record()  {
         recorder.record()
     }

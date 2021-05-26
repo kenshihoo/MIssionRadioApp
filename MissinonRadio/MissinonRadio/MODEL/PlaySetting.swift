@@ -24,16 +24,6 @@ class PlaySetting{
     func playAudio(url: URL){
         print(url)
         audioPlayer?.play()
-//        do {
-//            let audioFile = try AVAudioFile(forReading: url)
-//                audioPlayerNode.stop()
-//                audioPlayerNode.scheduleFile(audioFile, at: nil)
-//                try audioEngine.start()
-//                audioPlayerNode.play()
-//            }
-//            catch let error {
-//                print(error)
-//            }
         }
     
     func play(currentTime: Double) { // 再生位置を決めて再生
