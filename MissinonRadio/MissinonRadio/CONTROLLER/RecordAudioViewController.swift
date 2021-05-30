@@ -11,6 +11,7 @@ import AVFoundation
 class RecordAudioViewController: UIViewController,FileManagerDelegate, AVAudioRecorderDelegate{
     let fileSetting = FileSetting()
     let recordSetting = RecordSetting()
+    let audioList = AudioListViewController()
     var fileName : String!
     var fileUrl : URL!
     
@@ -27,7 +28,7 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate, AVAudioRe
         if fileUrl == nil {
         //タイムスタンプをファイル名にする
         let timeStamp = fileSetting.getRecordTime()
-//        fileName = "\(timeStamp).mp4a"
+            //fileName = "\(timeStamp).mp4a"
             fileName = "record.m4a"
             fileNameLabel.text =  timeStamp
         //音声ファイル保存用のファイルURLを作成
@@ -56,7 +57,6 @@ class RecordAudioViewController: UIViewController,FileManagerDelegate, AVAudioRe
         statusLabel.text = "録音"
         
         //ファイル名の指定をするかを確認したい(filemanagerでurlを変更"moveitem?")
-        
         dismiss(animated: true, completion: nil)
         print("録音を修了したよ")
         let playsetting = PlaySetting()

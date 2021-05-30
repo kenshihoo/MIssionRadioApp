@@ -15,14 +15,9 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
     let filesetting = FileSetting()
     
     override func viewWillAppear(_ animated: Bool) {
-        
-    }
-    
-    override func viewDidLoad() {
         audioList.dataSource = self
         audioList.delegate = self
         audioList.reloadData()
-        fileUrlList = filesetting.getFileArray()
         print("今のurlsは\(fileUrlList)")
     }
     
@@ -33,6 +28,7 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
     
     // TableViewに表示するセルの数を返す
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        fileUrlList = filesetting.getFileArray()
         print("セルの数は\(fileUrlList.count)個です")
         return fileUrlList.count
     }
