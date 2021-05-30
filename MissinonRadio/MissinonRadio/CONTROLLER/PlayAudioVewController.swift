@@ -18,7 +18,7 @@ class PlayAudioVewController: UIViewController,AVAudioPlayerDelegate,FileManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(filePath as Any)
+        print("選択されたpathは\(filePath as Any)")
         if filePath != nil{
             fileUrl = filesetting.getFileNames(fileName: filePath)
             playSetting.setupPlayer(with: fileUrl)

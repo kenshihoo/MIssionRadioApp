@@ -42,6 +42,19 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
         return cell
     }
     
+    
+    
+//セルがタップされたときの動き
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedFilePath = fileUrlList[indexPath.row]
+        //画面遷移
+            self.performSegue(withIdentifier: "goToplay", sender: selectedFilePath)
+        
+        // セルの選択を解除
+        audioList.deselectRow(at: indexPath, animated: true)
+        print("セルがタップされたよ")
+    }
+    
     // Segue 準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "goToplay") {
@@ -50,24 +63,8 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
         }
     }
     
-//セルがタップされたときの動き
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedFilePath = fileUrlList[indexPath.row]
-        //画面遷移
-        func segueToImageSave (){
-            self.performSegue(withIdentifier: "goToplay", sender: nil)
-            }
-        
-        // セルの選択を解除
-        audioList.deselectRow(at: indexPath, animated: true)
-        print("セルがタップされたよ")
-    }
-    
     //録音Buttonから録音画面を表示させる
     @IBAction func goRecordButton(_ sender: Any) {
         self.performSegue(withIdentifier: "goToRecord", sender: nil)
     }
-    
-    
-
 }

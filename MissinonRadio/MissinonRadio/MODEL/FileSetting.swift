@@ -34,13 +34,13 @@ class FileSetting:FileManager{
         }
     
     func getFileArray() -> [String]{
-        var filelist : [String] = []
+        var filelist : [String] = ["defo"]
         
         let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             do {
                 let contentUrls = try FileManager.default.contentsOfDirectory(at: dirURL, includingPropertiesForKeys: nil)
                 filelist = contentUrls.map{$0.lastPathComponent}
-                print("fileUrlはList\(filelist)")
+                print("fileUrlListは\(filelist)")
             }
             catch let error {
                 print(error)
