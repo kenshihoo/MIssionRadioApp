@@ -48,7 +48,7 @@ class AudioListViewController:  UIViewController,UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedFilePath = fileUrlList[indexPath.row]
         //画面遷移
-            self.performSegue(withIdentifier: "goToplay", sender: selectedFilePath)
+            self.performSegue(withIdentifier: "goToplay", sender: nil)
         
         // セルの選択を解除
         audioList.deselectRow(at: indexPath, animated: true)

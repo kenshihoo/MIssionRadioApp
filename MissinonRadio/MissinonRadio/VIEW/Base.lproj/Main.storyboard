@@ -167,14 +167,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AudioListCell" id="W2K-ou-lSh" customClass="AudioListCell" customModule="MissinonRadio" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="319" height="43"/>
+                                        <rect key="frame" x="0.0" y="28" width="319" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W2K-ou-lSh" id="NoZ-bG-dZG">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="録音データはありません" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOr-Ob-gcG">
-                                                    <rect key="frame" x="24" y="11" width="191" height="21"/>
+                                                    <rect key="frame" x="24" y="11" width="191" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -189,7 +189,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="audioNameLabel" destination="HOr-Ob-gcG" id="pN0-Tl-RBf"/>
-                                            <segue destination="qpY-6u-7dh" kind="presentation" identifier="goToplay" id="fYh-57-B2E"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -208,6 +207,7 @@
                     <connections>
                         <outlet property="audioList" destination="i3a-c8-4yO" id="yxK-cs-sop"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToRecord" modalPresentationStyle="fullScreen" id="Ud7-eL-cku"/>
+                        <segue destination="qpY-6u-7dh" kind="presentation" identifier="goToplay" id="unz-cB-sGi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7e-OI-ABM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
