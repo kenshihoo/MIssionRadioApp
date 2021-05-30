@@ -28,7 +28,6 @@ class FileSetting:FileManager{
             else {
                   fatalError("documentDirectoryのURL取得エラーでアプリをクラッシュさせました")
               }
-        print("取得したdireUrlは\(dirURL)です")
         let fileURL = dirURL.appendingPathComponent(fileName)
         print("fileURL\(fileURL)を取得")
         return fileURL
@@ -41,7 +40,7 @@ class FileSetting:FileManager{
             do {
                 let contentUrls = try FileManager.default.contentsOfDirectory(at: dirURL, includingPropertiesForKeys: nil)
                 filelist = contentUrls.map{$0.lastPathComponent}
-                print(filelist)
+                print("fileUrlはList\(filelist)")
             }
             catch let error {
                 print(error)
